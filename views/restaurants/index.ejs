@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate')%>
+    <h1 class="mt-4 mb-2 text-center">All the Restaurants</h1>
+    <% for(let rest of restos){%>
+        <div class="card" mb-3>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="/restaurants/<%=rest._id%>"> <img src="<%=rest.image%>" class="img-fluid"
+                            style="height: 25em; width: 100%; alt=" RESTO"></a>
+                </div>
+                <div class=" col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%=rest.name%>
+                        </h5>
+                        <p class="card-text">
+                            <%=rest.address%>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%=rest.phoneNumber%> <br>
+                                    <%=rest.email%> <br>
+                                        <%=rest.category%>
+
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/restaurants/<%=rest._id%>">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>

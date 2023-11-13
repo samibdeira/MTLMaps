@@ -1,0 +1,46 @@
+<% layout('layouts/boilerplate') %>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1>Welcome to Our Restaurant Collection</h1>
+            <p>Explore a wide variety of dining options!</p>
+        </div>
+
+        <section id="restaurants-list">
+            <h2 class="text-center mb-3">Featured Restaurants</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <% for(let rest of restos){ %>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="/restaurants/<%=rest._id%>"><img src="<%= rest.image %>"
+                                    class="card-img-top img-fluid" style="height: 25em; width: 100%; object-fit: cover;"
+                                    alt="<%= rest.name %>"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= rest.name %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= rest.address %>
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <%= rest.phoneNumber %><br>
+                                            <%= rest.email %><br>
+                                                <%= rest.category %>
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a class="btn btn-primary" href="/restaurants/<%= rest._id %>">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">You're welcome</span>
+        </div>
+    </footer>

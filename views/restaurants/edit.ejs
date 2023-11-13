@@ -1,0 +1,61 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center mt-4">
+            Edit Restaurant
+        </h1>
+        <div class="col-md-6 offset-md-3">
+            <form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST" noValidate
+                class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name </label>
+                    <input class="form-control" type="text" id="name" name="restaurant[name]"
+                        value="<%=restaurant.name%>" required>
+                    <div class="invalid-feedback">
+                        Required Field
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="address">Address </label>
+                    <input class="form-control" type="text" id="address" name="restaurant[address]"
+                        value="<%=restaurant.address%>" required>
+                    <div class="invalid-feedback">
+                        Required Field
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phoneNumber">Phone Number </label>
+                    <input class="form-control" type="text" id="phoneNumber" name="restaurant[phoneNumber]"
+                        value="<%=restaurant.phoneNumber%>" required>
+                    <div class="invalid-feedback">
+                        Required Field
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="email">Email </label>
+                    <input class="form-control" type="text" id="email" name="restaurant[email]"
+                        value="<%=restaurant.email%>" required>
+                    <div class="invalid-feedback">
+                        Required Field
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="category">Category </label>
+                    <input class="form-control" type="text" id="category" name="restaurant[category]"
+                        value="<%=restaurant.category%>" required>
+                    <div class="invalid-feedback">
+                        Required Field
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image URL </label>
+                    <input class="form-control" type="text" id="image" name="restaurant[image]"
+                        value="<%=restaurant.image%>" required>
+                    <div class="invalid-feedback">
+                        Required Field
+                    </div>
+                </div>
+                <div class="text-center mb-3"> <button class="btn btn-success">Submit Edits</button> <a
+                        class="btn btn-danger" href="/restaurants/<%=restaurant._id%>">Cancel</a></div>
+            </form>
+        </div>
+    </div>

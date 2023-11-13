@@ -1,0 +1,67 @@
+<% layout('layouts/boilerplate')%>
+    <div class="col mt-5 mb-4">
+        <div class="col-6 offset-3">
+            <div class="card text-center">
+                <a href="/restaurants/<%=restaurant._id%>"><img src="<%= restaurant.image %>"
+                        class="card-img-to restaurant-image" style="height: 25em; width: 25em;"
+                        alt="<%= restaurant.image %>"></a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <%= restaurant.name%>
+                    </h5>
+                    <li class="list-group list-group-flush">
+                        <!-- <p class="card-text"> -->
+                    <li class="list-group-item">
+                        <%= restaurant.address%>
+                    </li>
+                    <li class="list-group-item">
+                        <%= restaurant.phoneNumber%>
+                    </li>
+                    <li class="list-group-item">
+                        <%= restaurant.email%>
+                    </li>
+                    <li class="list-group-item">
+                        <%= restaurant.category%>
+                    </li>
+                    <!-- </p> -->
+                    </li>
+                    <footer>
+                        <a class="btn btn-primary me-1" href="/restaurants">All Restaurants</a>
+                        <a class="btn btn-warning me-1" href="/restaurants/<%=restaurant._id%>/edit">Edit Restaurant</a>
+                        <form class="d-inline" action="/restaurants/<%=restaurant._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger d-inline">Delete</button>
+                        </form>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="mt-4 text-center">
+        <h1>
+            <%= restaurant.name%>
+        </h1>
+        <h1>
+            <img src="<%= restaurant.image %>" alt="<%= restaurant.name %> image" class="img-fluid"
+                style="max-width: 600px; height: auto;">
+        </h1>
+        <h2>
+            <%= restaurant.address%>
+        </h2>
+        <h2>
+            <%= restaurant.phoneNumber%>
+        </h2>
+        <h2>
+            <%= restaurant.email%>
+        </h2>
+        <h2>
+            <%= restaurant.category%>
+        </h2>
+    </div>
+    <footer>
+        <a class="btn btn-primary me-1" href="/restaurants">All Restaurants</a>
+        <a class="btn btn-warning me-1" href="/restaurants/<%=restaurant._id%>/edit">Edit Restaurant</a>
+        <form class="d-inline" action="/restaurants/<%=restaurant._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger d-inline">Delete</button>
+        </form>
+    </footer> -->
